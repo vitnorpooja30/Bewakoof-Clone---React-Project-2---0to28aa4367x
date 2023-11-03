@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa';
 import { toggleMenu } from '../Utils/appSlice';
 import { useDispatch } from 'react-redux';
@@ -8,8 +8,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { BiFilterAlt } from 'react-icons/bi';
 import { FaList } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
-import humburger from './humburger';
-
+import { FiLogOut } from 'react-icons/fi';
+import Humburger from './humburger';
 
 
 const Header = () => {
@@ -17,13 +17,19 @@ const Header = () => {
     const [search, setSearch] = useState("");
     const [hum , setHum] = useState(false)
     const dispatch = useDispatch();
+    const nevigate = useNavigate()
 
     const handleToggleMenu = () => {
         // console.log("yes")
         setHum(!hum);
         // dispatch(toggleMenu());
     }
-
+    const jwt_token = localStorage.getItem("jwtToken");
+    function clearJwt(){
+        localStorage.removeItem("jwtToken")
+        alert("u logout successfully")
+        nevigate('/')
+      }
 
     return (
         <div>
@@ -64,7 +70,7 @@ const Header = () => {
                 </div>
                 <div className='w-1/2'>
                     <ul className='flex justify-around'>
-                        <li className='font-bold text-xl p-2 m-1'><Link to={"/login"}><FaUser /></Link></li>
+                        <li className='font-bold text-xl p-2 m-1'>{jwt_token ? <FiLogOut onClick={clearJwt}/> :<Link to={"/login"}><FaUser /></Link>}</li>
                         <li className='font-bold text-xl p-2 m-1'><Link to={"/wishlist"}><FaHeart /></Link></li>
                         <li className='font-bold text-xl p-2 m-1'><Link to={"/cart"}><FaShoppingCart /></Link></li>
                         <li className='font-bold text-xl p-2 m-1'><Link to={"/filter"}><BiFilterAlt /></Link></li>
@@ -83,7 +89,7 @@ const Header = () => {
             </div>
         </div>
         {
-            hum && <humburger/>
+            hum && <Humburger/>
         }
         </div>
     )
