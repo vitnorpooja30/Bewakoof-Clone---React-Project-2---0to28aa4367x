@@ -68,3 +68,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### About project 
+This project is clone of bewakoof.com that is a ecommerce website and sell clothes . this is my Newton project given by  Newton school . I tried to make this project looking like real one . The Api i use in project is given and created and manage  by Newton School i use api to create this project .  
+## project main page
+My Api is present in the utils.js file in Util folder in this project .i create Header and the frontPage in the front Page i image other then newton Api images i use to take images from real site and int the crousal i use swiper js library to create that automatic crousal the images i use in crousal in from google and other source 
+And in main page i also made footer 
+## header 
+i header i have men women and search cart wishList and order List and user details 
+
+in men and women if user click they go to product page where all the product are their if the user click on and product they route to the clothes Information Page which carries the clothes tha data and othr information and also add to cart and add to wishlist button and order now button ans also product description in search user can search an items like jeans and t-shirt . they move to search page and header order list at the far right side in the order list user will see the list of order that they made ... their is also the filter symbol on the header if user click on that they move to filter page if the user in this  page they can select the brand and price as query and filter option and apply the page will show the data related to the query and filter option .
+
+## User Account 
+In the top left their is flag symbol option if the user is click on that user Account page is open in which the user that tha option such ans the order detail tha update possword and delete account all this handle by  Newtons api 
+# css 
+i use tailwind css in project ;
+
+## conclusion 
+This is my First  ecommerce project . 
+ API Integration - In this project i used to handle every things with Api's that provided by newton School .
+ Responsoive Designs - this is responsive for small devices also 
+Css - i use Tailwiind Css in this project . 
